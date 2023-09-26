@@ -1,13 +1,18 @@
 #include "sort.h"
 
 /**
- * l
+ * bubble_sort - Implementing the bubble sort algorithm
+ * @array: The array of integers to sort
+ * @size: The size of the array
  */
 
 void bubble_sort(int *array, size_t size)
 {
 	int temp, swapped;
 	size_t i, j;
+
+	if (array == NULL || size < 2)
+		return;
 
 	for (i = 0; i < size - 1; i++)
 	{
