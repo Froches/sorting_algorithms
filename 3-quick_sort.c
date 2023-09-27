@@ -1,7 +1,13 @@
 #include "sort.h"
 
-int lomuto_partition(int *array, int low, int high);
-void quick_sort_helper(int *array, int low, int high);
+void swap(int *array, int i, int j)
+{
+	int temp;
+
+	temp = array[i];
+	array[i] = array[j];
+	array[j] = temp;
+}
 
 /**
  * lomuto_partition - The Lomuto partition scheme
@@ -14,7 +20,8 @@ void quick_sort_helper(int *array, int low, int high);
 int lomuto_partition(int *array, int low, int high)
 {
 	int pivot = array[high];
-	int temp, j, i = low - 1;
+	int j;
+	int i = low - 1;
 
 	for (j = low; j < high; j++)
 	{
@@ -22,18 +29,12 @@ int lomuto_partition(int *array, int low, int high)
 		{
 			i++;
 
-			temp = array[i];
-			array[i] = array[j];
-			array[j] = temp;
-
-			print_array(array, high - low + 1);
+			swap(array, i, j);
+			print_array(array, high + 1);
 		}
 	}
-	temp = array[i + 1];
-	array[i + 1] = array[high];
-	array[high] = temp;
-
-	print_array(array, high - low + 1);
+	swap(array, i, j);
+	print_array(array, high + 1);
 
 	return i + 1;
 }
