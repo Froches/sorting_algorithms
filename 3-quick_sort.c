@@ -4,7 +4,7 @@
  * swap - Swaps two integers in an array
  * @array: The array whose elements it will swap
  * @i: The index of first integer
- * #j: The index of second integer
+ * @j: The index of second integer
  */
 void swap(int *array, int i, int j)
 {
@@ -43,7 +43,7 @@ int lomuto_partition(int *array, int low, int high, size_t size)
 	swap(array, i + 1, high);
 	print_array(array, size);
 
-	return i + 1;
+	return (i + 1);
 }
 
 /**
