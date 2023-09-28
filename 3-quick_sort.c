@@ -37,7 +37,6 @@ int lomuto_partition(int *array, int low, int high, size_t size)
 			i++;
 
 			swap(array, i, j);
-			print_array(array, size);
 		}
 	}
 	swap(array, i + 1, high);
@@ -77,4 +76,6 @@ void quick_sort(int *array, size_t size)
 		return;
 
 	quick_sort_helper(array, 0, size - 1, size);
+
+	print_array(array, size);
 }
