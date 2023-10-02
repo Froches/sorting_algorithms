@@ -2,8 +2,8 @@
 
 /**
  * swap - swaps two integers in an array
- * @a: first integer to swap
- * @b: second integer to swap
+ * @i: first integer to swap
+ * @j: second integer to swap
  */
 void swap(int *i, int *j)
 {
